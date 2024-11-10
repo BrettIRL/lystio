@@ -20,7 +20,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <Header />
       <FilterBar />
       <main className="mx-5 my-[7px] grid h-full grid-cols-main gap-1">
-        <MapView />
+        <MapView listings={listings} />
         <Listings listings={listings} />
       </main>
     </>

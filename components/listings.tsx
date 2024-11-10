@@ -31,7 +31,7 @@ export function Listings({ listings }: { listings: TenementSearchResult }) {
 
   return (
     <section className="relative bg-white">
-      <ListingsHeader count={listings.paging?.totalCount || 0} />
+      <ListingsHeader count={data.res?.length || 0} />
       <ScrollArea className="h-[calc(100vh-(15rem+20px))]">
         <div className="grid grid-cols-2 gap-x-8 gap-y-16 px-10 pt-5">
           {isRefetching ? (

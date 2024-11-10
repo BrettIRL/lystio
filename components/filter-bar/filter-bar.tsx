@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { MockFilterDropdown } from '@/components/mock-filter-dropdown';
-import { PriceFilterDropdown } from '@/components/price-filter-dropdown';
+import { MockFilterDropdown } from '@/components/filter-bar/mock-filter-dropdown';
+import { PriceFilterDropdown } from '@/components/filter-bar/price-filter-dropdown';
 
 const FILTERS = [
   'Rent',

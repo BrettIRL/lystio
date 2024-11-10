@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import mapboxgl, { LngLatLike, Marker } from 'mapbox-gl';
 import { useQuery } from '@tanstack/react-query';
-import { MapMarker } from '@/components/map-marker';
+import { MapMarker } from '@/components/map/map-marker';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { getListingsAction } from '@/lib/actions';
@@ -45,7 +45,7 @@ export function MapView({ listings }: { listings: TenementSearchResult }) {
       zoom: ZOOM,
       pitch: PITCH,
       antialias: true,
-      style: 'mapbox://styles/lystio/cm1erwga302jt01pjh0nxh47n',
+      // style: 'mapbox://styles/lystio/cm1erwga302jt01pjh0nxh47n',
     });
 
     mapRef.current.scrollZoom.disable();

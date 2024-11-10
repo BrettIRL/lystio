@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { UserNav } from '@/components/user-nav';
-import { SearchBar } from '@/components/search-bar';
+import { UserNav } from '@/components/header/user-nav';
+import { SearchBar } from '@/components/header/search-bar';
 
 export function Header() {
   return (
-    <header className="flex h-[5rem] items-center justify-between gap-2 border-b border-b-[rgba(0,0,0,0.1)] bg-white px-5">
+    <header className="flex h-[5rem] items-center justify-between gap-2 border-b border-b-[rgba(0,0,0,0.1)] bg-white px-8">
       <Image src="/lystio.svg" alt="Lystio logo" width={80} height={40} />
       <SearchBar />
       <div className="flex items-center gap-6">

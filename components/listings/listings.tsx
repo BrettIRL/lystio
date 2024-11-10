@@ -1,15 +1,15 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
-import { ListingCard } from '@/components/listing-card';
-import { ListingsHeader } from '@/components/listings-header';
-import { getListingsAction } from '@/lib/actions';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { useSearchParams } from 'next/navigation';
-import type { TenementSearchResult } from '@/ts/types/listing';
-import { parseSearchParamsToFilters } from '@/lib/utils';
 import { useEffect, useRef } from 'react';
-import { ListingSekeleton } from './listing-skeleton';
+import { useSearchParams } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
+import { ListingCard } from '@/components/listings/listing-card';
+import { ListingsHeader } from '@/components/listings/listings-header';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { ListingSekeleton } from '@/components/listings/listing-skeleton';
+import { getListingsAction } from '@/lib/actions';
+import { parseSearchParamsToFilters } from '@/lib/utils';
+import type { TenementSearchResult } from '@/ts/types/listing';
 
 export function Listings({ listings }: { listings: TenementSearchResult }) {
   const searchParams = useSearchParams();

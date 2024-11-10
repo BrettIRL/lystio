@@ -1,8 +1,5 @@
 import Image from 'next/image';
 import { format, formatDistanceToNow } from 'date-fns';
-import type { Tenement } from '@/ts/types/listing';
-import { Skeleton } from '@/components/ui/skeleton';
-import { TenementUnitSize } from '@/ts/enums/tenement';
 import { currencyToLocale } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -13,6 +10,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
+import { Skeleton } from '@/components/ui/skeleton';
+import { TenementUnitSize } from '@/ts/enums/tenement';
+import type { Tenement } from '@/ts/types/listing';
 
 export function ListingCard({ listing }: { listing: Tenement }) {
   return (

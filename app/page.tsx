@@ -1,7 +1,7 @@
-import { FilterBar } from '@/components/filter-bar';
-import { Header } from '@/components/header';
-import { Listings } from '@/components/listings';
-import { MapView } from '@/components/map-view';
+import { FilterBar } from '@/components/filter-bar/filter-bar';
+import { Header } from '@/components/header/header';
+import { Listings } from '@/components/listings/listings';
+import { MapView } from '@/components/map/map-view';
 import { getListingsAction } from '@/lib/actions';
 import { parseSearchParamsToFilters } from '@/lib/utils';
 import type { AsyncSearchParams } from '@/ts/types/searchParams';

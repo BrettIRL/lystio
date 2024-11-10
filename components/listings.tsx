@@ -8,16 +8,21 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { useSearchParams } from 'next/navigation';
 import type { TenementSearchResult } from '@/ts/types/listing';
 import { parseSearchParamsToFilters } from '@/lib/utils';
+import { useEffect } from 'react';
 
 export function Listings({ listings }: { listings: TenementSearchResult }) {
   const searchParams = useSearchParams();
   const filters = parseSearchParamsToFilters(searchParams);
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryKey: ['listings'],
     queryFn: () => getListingsAction(filters),
     initialData: listings,
   });
+
+  useEffect(() => {
+    refetch();
+  }, [refetch, searchParams]);
 
   if (isLoading) return <div>Loading...</div>;
 

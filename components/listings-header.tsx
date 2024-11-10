@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
-export function ListingsHeader() {
+interface ListingsHeaderProps {
+  count: number;
+}
+
+export function ListingsHeader({ count }: ListingsHeaderProps) {
   return (
     <header className="h-[6.5rem] border-b px-10 pb-3 pt-5">
       <div className="flex justify-between">
@@ -11,7 +16,11 @@ export function ListingsHeader() {
           Listing around me
         </h4>
         <div className="flex items-center gap-8">
-          <ToggleGroup className="rounded-sm bg-[#F6F7F9]" type="single">
+          <ToggleGroup
+            className="rounded-sm bg-[#F6F7F9]"
+            defaultValue="large-grid"
+            type="single"
+          >
             <ToggleGroupItem
               className="data-[state=on] scale-90 data-[state=on]:bg-white data-[state=on]:shadow-list-layout"
               value="small-grid"
@@ -52,7 +61,9 @@ export function ListingsHeader() {
           </div>
         </div>
       </div>
-      <h6 className="my-2 pl-10 text-xs">2,091 properties</h6>
+      <h6 className="my-2 pl-10 text-xs">
+        {count ? `${count} properties` : <Skeleton className="h-3 w-32" />}
+      </h6>
     </header>
   );
 }

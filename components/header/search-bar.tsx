@@ -9,7 +9,10 @@ import {
 export function SearchBar() {
   return (
     <div className="relative flex w-1/3 items-center gap-4 rounded-full border p-1">
-      <Input placeholder="Search" className="w-full rounded-full border-none" />
+      <Input
+        placeholder="Search"
+        className="focus-visible:ring-none w-full flex-1 rounded-full border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+      />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost">
@@ -24,7 +27,10 @@ export function SearchBar() {
           </Button>
         </DropdownMenuTrigger>
       </DropdownMenu>
-      <Button className="h-11 w-20 rounded-full bg-[#A540F3]" size="icon">
+      <Button
+        className="h-11 w-11 rounded-full bg-[#A540F3] hover:bg-[#8F35D8]"
+        size="icon"
+      >
         <Image src="/search.svg" alt="Search" width={24} height={24} />
       </Button>
     </div>

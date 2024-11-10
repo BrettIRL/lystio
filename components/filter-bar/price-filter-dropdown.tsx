@@ -47,7 +47,7 @@ export function PriceFilterDropdown() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <li className="flex items-center gap-4 p-[5px]">
+        <li className="group flex items-center gap-4 p-[5px]">
           Price
           {hasPriceParams
             ? `: \u20ac${filters.rent[0]} - \u20ac${filters.rent[1]}`
@@ -57,15 +57,16 @@ export function PriceFilterDropdown() {
             alt="Chevron down"
             width={8}
             height={4}
+            className="transition-transform duration-150 ease-in group-data-[state=open]:rotate-180"
           />
         </li>
       </PopoverTrigger>
       <PopoverContent className="w-60">
         <div className="grid gap-2">
-          <div className="grid grid-cols-4 items-center">
+          <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="width">Min:</Label>
             <Input
-              className="col-span-3 h-8"
+              className="col-span-3 h-8 focus-visible:ring-0 focus-visible:ring-offset-0"
               max={maxRent || 9999999}
               min={0}
               placeholder="0"
@@ -77,7 +78,7 @@ export function PriceFilterDropdown() {
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="maxWidth">Max:</Label>
             <Input
-              className="col-span-3 h-8"
+              className="col-span-3 h-8 focus-visible:ring-0 focus-visible:ring-offset-0"
               max={9999999}
               min={minRent || 1}
               placeholder="9999999"
@@ -87,7 +88,11 @@ export function PriceFilterDropdown() {
             />
           </div>
           <div className="text-right">
-            <Button className="bg-[#A540F3]" size="sm" onClick={handleApply}>
+            <Button
+              className="bg-[#A540F3] hover:bg-[#8F35D8]"
+              size="sm"
+              onClick={handleApply}
+            >
               Apply
             </Button>
           </div>

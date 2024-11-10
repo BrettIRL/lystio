@@ -21,7 +21,7 @@ export async function FilterBar() {
           <MockFilterDropdown key={filter} label={filter} />
         ))}
         <PriceFilterDropdown />
-        <Button className="flex gap-3 p-0" variant="ghost">
+        <Button className="flex gap-3 p-0 hover:bg-white" variant="ghost">
           <span>All</span>
           <Image src="/filter.svg" alt="Chevron down" width={16} height={16} />
         </Button>

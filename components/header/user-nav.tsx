@@ -10,7 +10,7 @@ export function UserNav() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" className="hover:bg-white">
           <Avatar className="h-8 w-8">
             <AvatarImage src="/profile.png" alt="lystio" />
             <AvatarFallback>LY</AvatarFallback>
